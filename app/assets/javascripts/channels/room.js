@@ -10,5 +10,15 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
     $(".alert.alert-info").show();
-  }
+  },
+
+	listen_to_comments: function() {
+	  return this.perform('listen', {
+	    room_id: $("[data-room-id]").data("room-id")
+	  });
+	}
+});
+
+$(document).on('turbolinks:load', function() {
+  App.room.listen_to_comments();
 });

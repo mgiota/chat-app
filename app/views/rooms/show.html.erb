@@ -4,15 +4,23 @@
 		<% @rooms.each do |room| %>
 			<p><%= link_to room.topic, room %></p>
 		<% end %>
+		<div class="user-links">
+			<%= link_to 'Edit', edit_room_path(@room) %> |
+			<%= link_to 'Back', rooms_path %>
+		</div>
 	</div>
 	<div class="col-lg-10">
 		<div class="topic-show">
 			<h1><%= @room.topic %></h1>
 			<p><%= @room.description %></p>
 		</div>
-		<div class="user-links">
-			<%= link_to 'Edit', edit_room_path(@room) %> |
-			<%= link_to 'Back', rooms_path %>
+		<div class="comment-result">
+			<%= render 'comments' %>
+		</div>
+		<div class="comment-section">
+			<div class="new-comment">
+				<%= render 'new_comment' %>
+			</div>
 		</div>
 </div>
 </section>

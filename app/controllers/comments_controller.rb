@@ -16,7 +16,11 @@ class CommentsController < ApplicationController
 	end
 
   def destroy
-  end
+	  @comment = Comment.find(params[:id])
+	  room = @comment.room
+	  @comment.destroy
+	  redirect_to room
+	end
 
   private
 

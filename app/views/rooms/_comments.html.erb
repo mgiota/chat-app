@@ -1,7 +1,10 @@
 <div class="topic-comment">
   <% @comments.each do |comment| %>
     	<div class="comment">
-      	<p><%= comment.user.first_name %> <br>
+      	<p><%= comment.user.first_name %> <% if current_user && current_user.admin? %>
+         <%= link_to ('<span><i class="fas fa-times-circle"></i></span>').html_safe , room_comment_path(comment.room, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+         <% end %>
+         <br>
       	<small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
       	<p class="comment-body"><%= comment.body %></p>
       </div>

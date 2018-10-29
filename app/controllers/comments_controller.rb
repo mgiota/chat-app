@@ -3,11 +3,12 @@ class CommentsController < ApplicationController
 	  @room = Room.find(params[:room_id])
 	  @comment = @room.comments.new(comment_params)
 	  @comment.user = current_user
+	  @user = current_user
 	  
 	  respond_to do |format|
 	    if @comment.save
 	    	 # ActionCable.server.broadcast 'room_channel', comment: @comment
-	    	 RoomChannel.broadcast_to @room.id, comment: CommentsController.render(partial: 'comments/comment', locals: {comment: @comment, current_user: current_user})
+	    	 # RoomChannel.broadcast_to @room.id, comment: CommentsController.render(partial: 'comments/comment', locals: {comment: @comment, current_user: current_user})
 	      format.html { redirect_to @room, notice: 'Review was created successfully.' }
 	      format.json { render :show, status: :created, location: @room }
 	      format.js

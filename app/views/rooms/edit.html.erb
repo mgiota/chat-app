@@ -1,6 +1,9 @@
-<h1>Editing Room</h1>
+<section class="container">
+	<h3>Editing Room</h3>
 
-<%= render 'form', room: @room %>
-
-<%= link_to 'Show', @room %> |
-<%= link_to 'Back', rooms_path %>
+	<%= render 'form', room: @room %>
+	<div class="user-links">
+		<%= link_to 'Show', @room %> |
+		<%= link_to 'Back', rooms_path %>
+	</div>
+</section>

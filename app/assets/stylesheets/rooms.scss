@@ -1,3 +1,26 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.topic-section {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	border-bottom: 2px solid #eee;
+}
+
+.topic-column {
+	height: 800px;
+	background-color: #f8f9fa;
+	padding-top: 30px;
+}
+
+.topic-show {
+	margin-left: 40px;
+	height: auto;
+	padding-bottom: 40px;
+	border-bottom: 2px solid #f8f9fa;
+}
+
+.topic-show p {
+	padding-top: 30px;
+}

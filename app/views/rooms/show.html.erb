@@ -1,4 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<section class="container spacing-top">
+<div class="row">
+	<div class="col-lg-2 topic-column">
+		<% @rooms.each do |room| %>
+			<p><%= link_to room.topic, room %></p>
+		<% end %>
+	</div>
+	<div class="col-lg-10">
+		<div class="topic-show">
+			<h1><%= @room.topic %></h1>
+			<p><%= @room.description %></p>
+		</div>
+		<div class="user-links">
+			<%= link_to 'Edit', edit_room_path(@room) %> |
+			<%= link_to 'Back', rooms_path %>
+		</div>
+</div>
+</section>

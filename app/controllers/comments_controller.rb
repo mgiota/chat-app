@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
 	  
 	  respond_to do |format|
 	    if @comment.save
+	    	 ActionCable.server.broadcast 'room_channel', comment: @comment
 	      format.html { redirect_to @room, notice: 'Review was created successfully.' }
 	      format.json { render :show, status: :created, location: @room }
 	      format.js

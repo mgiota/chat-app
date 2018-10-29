@@ -1,4 +1,14 @@
-<p id="notice"><%= notice %></p>
+<section class="container spacing-top">
+	<p>
+	  <strong>First name:</strong>
+	  <%= @user.first_name %>
+	</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	<p>
+	  <strong>Last name:</strong>
+	  <%= @user.last_name %>
+	</p>
+
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Back', users_path %>
+</section>

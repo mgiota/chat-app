@@ -1,6 +1,9 @@
-<h1>Editing User</h1>
+<section class="container spacing-top">
+	<h3>Editing User</h3>
 
-<%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+	<%= render 'form', user: @user %>
+	<div class="user-links">
+		<%= link_to 'Show', @user %> |
+		<%= link_to 'Back', users_path %>
+	</div>
+</section>

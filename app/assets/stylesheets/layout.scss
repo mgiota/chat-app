@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+a {
+	color: orange;
+}
+
+.spacing-top {
+	margin-top: 60px;
+}
+
+#notice, #alert {
+	right: 30%;
+	left: 30%;
+	top: 20%;
+	height: 50px;
+	position: absolute;
+	z-index: 10;
+}
+
+.notice {
+	text-align: center;
+	padding-top: 14px;
+	font-weight: 800;
+	color: green;
+}
+
+.alert {
+	text-align: center;
+	padding-top: 14px;
+	font-weight: 800;
+	color: red;
+}

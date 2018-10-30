@@ -21,10 +21,12 @@
 .topic-column {
 	height: 100vh;
 	background-color: #308694;
-	padding-top: 30px;
+	padding-top: 60px;
 	color: #fff;
 	position: fixed;
+	z-index: -1;
 	left: 0;
+	top: 0;
 }
 
 .topic-column a {
@@ -63,4 +65,5 @@
 .display-area {
 	position: absolute;
   right: 0;
+  margin-bottom: 60px;
 }

@@ -16,11 +16,15 @@
 					<p><%= link_to room.topic, room %></p>
 				<% end %>
 			</div>
-			<div class="user-links">
-				<%= link_to 'Edit', edit_room_path(@room) %> |
-				<%= link_to 'Back', rooms_path %>
-			</div>
+			<% if current_user && current_user.admin? %>
+				<div class="user-links">
+					<%= link_to 'Edit', edit_room_path(@room) %> |
+					<%= link_to 'Back', rooms_path %>
+				</div>
+				<% else %>
+			<% end %>
 		</div>
+
 		<div class="col-lg-10 display-area">
 			<div class="topic-show">
 				<h3>#<%= @room.topic %></h3>
@@ -33,8 +37,7 @@
 			</div>
 		</div>
 	</div>
-
-	<section class="container-fluid">
+	<section class="container-fluid spacing-top">
 		<div class="comment-section">
 			<div class="new-comment">
 				<%= render 'new_comment' %>

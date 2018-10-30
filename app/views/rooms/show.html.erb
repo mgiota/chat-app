@@ -8,13 +8,16 @@
 
 				<div class="channel online">
 					<h5>Active now</h5>
-	        	<p><%= @user.first_name %></p>
+	        	
 				</div>
 
 				<div class="channel users">
 					<h5>Users</h5>
 					<% @users.each do |user| %>
-	        	<p><%= user.first_name %> <%= user.last_name %></P>
+					<div class="user-details">
+						<%= image_tag user.profile_pic.variant(combine_options: {resize: '70x70^', gravity: 'center', extent: '70x70^'}), class: 'circle' %>
+		        <p class="user-name"><%= user.first_name %> <%= user.last_name %></p>
+	        </div>
 	        <% end %>
 				</div>
 

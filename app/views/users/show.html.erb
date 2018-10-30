@@ -1,4 +1,6 @@
 <section class="container spacing-top">
+
+	<%= image_tag @user.profile_pic.variant(combine_options: {resize: '300x300^', gravity: 'center', extent: '300x300^'}) %>
 	<p>
 	  <strong>First name:</strong>
 	  <%= @user.first_name %>

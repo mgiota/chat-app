@@ -34,6 +34,22 @@
 	background-color: #308694;
 }
 
+.circle {
+	height: 35px;
+  width: 35px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+}
+
+
+
+.user-details {
+	margin-bottom: 20px;
+}
+
 @media(min-width: 768px) {
 	.form-center {
 		width: 400px;

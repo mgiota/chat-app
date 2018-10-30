@@ -4,8 +4,45 @@
 
 .title-center	{
 	margin: auto;
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 .title-center h1	{
 	font-size: 4em;
+}
+
+.img-right {
+	float: right;
+}
+
+.index-spacing {
+	margin-top: 50px;
+}
+
+.img-position {
+	text-align: center;
+}
+
+@media(min-width: 768px) {
+	.index-spacing {
+		margin-top: 100px;
+	}
+	.title-center	{
+		text-align: center;
+	}
+}
+
+@media(min-width: 992px) {
+	.img-position {
+		text-align: right;
+	}
+
+	.index-spacing {
+		margin-top: 200px;
+	}
+	.title-center	{
+		margin: auto;
+		text-align: left;
+	}
 }

@@ -58,12 +58,43 @@
 }
 
 .new-comment {
-	width: 70%;
-	margin-left: 350px;
-
+	width: 100%;
+	position: fixed;
+	z-index: 40;
+	bottom: 0;
+	right: 0;
+	padding-right: 20px;
+	padding-left: 20px;
 }
 
 .topic-comment {
 	width: auto;
 	height: auto;
 }
+
+@media(min-width: 992px){
+
+	.new-comment {
+		width: 80%;
+		position: fixed;
+		z-index: 40;
+		right: 30px;
+		bottom: 0;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

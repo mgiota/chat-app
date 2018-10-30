@@ -1,33 +1,39 @@
 <section class="container-fluid visible-comments" data-room-id="<%= @room.id %>">
 	<div class="row">
 		<div class="col-lg-2 topic-column">
-			<div class="channel">
-        <p>Welcom back <%= current_user.first_name %></P>
-			</div>
-			<div class="channel">
-				<h5>Active now</h5>
-        	<p><%= @user.first_name %></p>
-			</div>
-			<div class="channel">
-				<h5>Users</h5>
-				<% @users.each do |user| %>
-        	<p><%= user.first_name %> <%= user.last_name %></P>
-        <% end %>
-			</div>
-			<div class="channel">
-				<h5>Channels</h5>
-				<% @rooms.each do |room| %>
-					<p><%= link_to room.topic, room %></p>
-				<% end %>
-			</div>
-			<% if current_user && current_user.admin? %>
-				<div class="user-links">
-					<%= link_to 'Edit', edit_room_path(@room) %> |
-					<%= link_to 'Back', rooms_path %>
+
+				<div class="channel welcome">
+	        <p>Welcome back <%= current_user.first_name %>!</P>
 				</div>
-				<% else %>
-			<% end %>
+
+				<div class="channel online">
+					<h5>Active now</h5>
+	        	<p><%= @user.first_name %></p>
+				</div>
+
+				<div class="channel users">
+					<h5>Users</h5>
+					<% @users.each do |user| %>
+	        	<p><%= user.first_name %> <%= user.last_name %></P>
+	        <% end %>
+				</div>
+
+				<div class="channel links">
+					<h5>Channels</h5>
+					<% @rooms.each do |room| %>
+						<p><%= link_to room.topic, room %></p>
+					<% end %>
+				</div>
+
+				<% if current_user && current_user.admin? %>
+					<div class="user-links">
+						<%= link_to 'Edit', edit_room_path(@room) %> |
+						<%= link_to 'Back', rooms_path %>
+					</div>
+					<% else %>
+				<% end %>
 		</div>
+	</div>
 
 		<div class="col-lg-10 display-area">
 			<div class="topic-show">

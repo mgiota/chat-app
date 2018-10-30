@@ -9,7 +9,7 @@
 }
 
 .topic-column {
-	min-height: 100%;
+	height: 100vh;
 	background-color: #308694;
 	padding-top: 30px;
 	color: #fff;
@@ -29,4 +29,20 @@
 .topic-show p {
 	padding-top: 5px;
 	margin-bottom: 5px;
+}
+
+.visible-comments {
+	margin-bottom: 50px;
+}
+
+.channel {
+	border-bottom: 1px solid #fff;
+	margin-bottom: 40px;
+	padding-bottom: 10px;
+}
+
+.channel h5 {
+	color: #33585f;
+	font-weight: 300;
+	font-size: 1em;
 }

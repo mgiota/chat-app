@@ -4,6 +4,5 @@
    		<%= link_to ('<span><i class="fas fa-times-circle"></i></span>').html_safe , room_comment_path(comment.room, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
    <% end %>
  	</p>
-   <br>
 	<p class="comment-body"><%= comment.body %></p>
 </div>

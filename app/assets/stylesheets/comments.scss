@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+#posted {
+	color: red;
+}
+
 .comment {
 	margin-bottom: 20px;
 }
@@ -16,8 +20,16 @@
 	margin-bottom: 0;
 }
 
+.comment small {
+	color: #afadad;
+}
+
+
+.comment-body {
+	color: #7b7979;
+}
+
 .comment-section	{
-	background-color: #fff;
 	width: 100%;
 	position: fixed;
 	bottom: 0;

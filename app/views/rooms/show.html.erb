@@ -1,28 +1,41 @@
-<section class="container-fluid" data-room-id="<%= @room.id %>">
-<div class="row">
-	<div class="col-lg-2 topic-column">
-		<% @rooms.each do |room| %>
-			<p><%= link_to room.topic, room %></p>
-		<% end %>
-		<div class="user-links">
-			<%= link_to 'Edit', edit_room_path(@room) %> |
-			<%= link_to 'Back', rooms_path %>
-		</div>
-	</div>
-	<div class="col-lg-10">
-		<div class="topic-show">
-			<h3>#<%= @room.topic %></h3>
-			<p><%= @room.description %></p>
-			<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-			<p id="posted"></p>
-		</div>
-		<div class="comment-result">
-			<%= render 'comments' %>
-		</div>
-		<div class="comment-section">
-			<div class="new-comment">
-				<%= render 'new_comment' %>
+<section class="container-fluid visible-comments" data-room-id="<%= @room.id %>">
+	<div class="row">
+		<div class="col-lg-2 topic-column">
+			<div class="channel">
+				<h5>Users</h5>
+				<% @users.each do |user| %>
+        	<p><%= user.first_name %> <%= user.last_name %></P>
+        <% end %>
+			</div>
+			<div class="channel">
+				<h5>Channels</h5>
+				<% @rooms.each do |room| %>
+					<p><%= link_to room.topic, room %></p>
+				<% end %>
+			</div>
+			<div class="user-links">
+				<%= link_to 'Edit', edit_room_path(@room) %> |
+				<%= link_to 'Back', rooms_path %>
 			</div>
 		</div>
-</div>
+		<div class="col-lg-10">
+			<div class="topic-show">
+				<h3>#<%= @room.topic %></h3>
+				<p><%= @room.description %></p>
+				<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+				<p id="posted"></p>
+			</div>
+			<div class="comment-result">
+				<%= render 'comments' %>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="container-fluid">
+	<div class="comment-section">
+		<div class="new-comment">
+			<%= render 'new_comment' %>
+		</div>
+	</div>
 </section>

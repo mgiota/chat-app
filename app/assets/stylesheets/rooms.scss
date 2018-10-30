@@ -9,18 +9,24 @@
 }
 
 .topic-column {
-	height: 800px;
-	background-color: #f8f9fa;
+	min-height: 100%;
+	background-color: #308694;
 	padding-top: 30px;
+	color: #fff;
+}
+
+.topic-column a {
+	color: #fff;
 }
 
 .topic-show {
-	margin-left: 40px;
+	margin-left: 20px;
 	height: auto;
-	padding-bottom: 40px;
+	padding-top: 20px;
 	border-bottom: 2px solid #f8f9fa;
 }
 
 .topic-show p {
-	padding-top: 30px;
+	padding-top: 5px;
+	margin-bottom: 5px;
 }

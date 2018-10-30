@@ -1,4 +1,4 @@
-<section class="container spacing-top" data-room-id="<%= @room.id %>">
+<section class="container-fluid" data-room-id="<%= @room.id %>">
 <div class="row">
 	<div class="col-lg-2 topic-column">
 		<% @rooms.each do |room| %>
@@ -11,7 +11,7 @@
 	</div>
 	<div class="col-lg-10">
 		<div class="topic-show">
-			<h1><%= @room.topic %></h1>
+			<h3>#<%= @room.topic %></h3>
 			<p><%= @room.description %></p>
 			<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 			<p id="posted"></p>

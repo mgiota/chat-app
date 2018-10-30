@@ -4,15 +4,24 @@
 
 
 .comment {
-	margin-bottom: 40px;
-	border-bottom: 2px solid #eee;
+	margin-bottom: 20px;
+}
+
+.comment i {
+	padding-left: 10px;
+	color: red;
+}
+
+.comment p {
+	margin-bottom: 0;
 }
 
 .comment-section	{
-	background-color: #f8f9fa;
-	width: 70%;
+	background-color: #fff;
+	width: 100%;
 	position: fixed;
 	bottom: 0;
+	left: 0;
 }
 
 .comment-section label	{
@@ -20,20 +29,13 @@
 }
 
 .new-comment {
-	width: 50%;
-	margin: auto;
+	width: 70%;
+	margin-left: 360px;
+
 }
 
 .topic-comment {
 	width: auto;
 	height: auto;
 	padding: 30px;
-}
-
-.comment-result	{
-	margin-left: 30px;
-}
-
-.comment-body {
-	margin-top: 40px;
 }

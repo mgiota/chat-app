@@ -8,11 +8,23 @@
 	border-bottom: 2px solid #eee;
 }
 
+.topic-section a {
+	color: #308694;
+	text-decoration: none;
+}
+
+.topic-section p {
+	color: #7b7979;
+	font-style: italic;
+}
+
 .topic-column {
 	height: 100vh;
 	background-color: #308694;
 	padding-top: 30px;
 	color: #fff;
+	position: fixed;
+	left: 0;
 }
 
 .topic-column a {
@@ -46,4 +58,9 @@
 	color: #33585f;
 	font-weight: 300;
 	font-size: 1em;
+}
+
+.display-area {
+	position: absolute;
+  right: 0;
 }

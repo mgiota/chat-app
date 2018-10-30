@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'join'}
-  get 'simple_pages/index'
   resources :messages
   resources :rooms do
   	resources :comments

@@ -8,14 +8,13 @@ body, html {
 
 a {
 	color: #000;
-	text-decoration: underline;
 }
 
 .spacing-top {
 	margin-top: 60px;
 }
 
-.notice, .alert {
+/*.notice, .alert {
 	left: 0;
 	top: 0;
 	height: 100px;
@@ -27,4 +26,28 @@ a {
 	padding-top: 35px;
 	font-weight: 400;
 	color: #fff;
+}*/
+
+#notice, #alert {
+	right: 30%;
+	left: 30%;
+	top: 20%;
+	height: 50px;
+	position: absolute;
+	z-index: 10;
+	border: 4px solid #000;
+}
+
+.notice {
+	text-align: center;
+	padding-top: 14px;
+	font-weight: 800;
+	color: green;
+}
+
+.alert {
+	text-align: center;
+	padding-top: 14px;
+	font-weight: 800;
+	color: red;
 }

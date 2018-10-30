@@ -1,3 +1,4 @@
+<% if current_user && current_user.admin? %>
 <section class="container spacing-top">
   <h3>Welcome to my chap app</h3>
 
@@ -22,13 +23,16 @@
   </table>
     <%= link_to 'New Room', new_room_path %>
 </section>
-
+<% else %>
 <section class="container spacing-top">
   <% @rooms.each do |room| %>
         <div class="row">
           <div class="col-lg-12 topic-section">
             <h1><%= link_to room.topic, room %></h1>
+            <p><%= room.comments.count %> comments have been posted</p>
           </div>
         </div>
       <% end %>
+       <%= link_to 'Add a channel', new_room_path, class: 'btn btn-outline-dark spacing-top' %>
 </section>
+<% end %>

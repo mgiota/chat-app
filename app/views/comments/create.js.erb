@@ -1,2 +1,2 @@
-$("#posted").html("You comment has been posted");
+$("#posted").fadeIn().delay(3000).fadeOut('slow');
 $('.comment-result').prepend("<%= j render @comment %>");

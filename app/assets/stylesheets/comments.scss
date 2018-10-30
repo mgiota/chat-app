@@ -4,11 +4,17 @@
 
 
 #posted {
-	color: red;
+	color: #308694;
+	display: none;
+}
+
+#posted i {
+	margin-right: 10px;
 }
 
 .comment {
 	margin-bottom: 20px;
+	margin-left: 20px;
 }
 
 .comment i {
@@ -50,5 +56,4 @@
 .topic-comment {
 	width: auto;
 	height: auto;
-	padding: 30px;
 }

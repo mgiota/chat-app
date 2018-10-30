@@ -5,6 +5,10 @@
         <p>Welcom back <%= current_user.first_name %></P>
 			</div>
 			<div class="channel">
+				<h5>Active now</h5>
+        	<p><%= @user.first_name %></p>
+			</div>
+			<div class="channel">
 				<h5>Users</h5>
 				<% @users.each do |user| %>
         	<p><%= user.first_name %> <%= user.last_name %></P>

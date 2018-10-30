@@ -11,8 +11,10 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
+    @user = current_user
     @rooms = Room.all
-    @users = User.all
+    @users = User.all 
+
     @comments = @room.comments.order("created_at DESC")
   end
 

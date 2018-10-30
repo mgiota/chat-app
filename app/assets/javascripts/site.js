@@ -1,4 +1,4 @@
 $(document).on('turbolinks:load', function(){
-	$('#notice').fadeIn('fast').delay(3000).fadeOut('fast');
-	$('#alert').fadeIn('fast').delay(3000).fadeOut('fast');
+	$('.notice').slideDown('fast').show().delay(3000).slideUp('fast');
+	$('.alert').SlideDown('fast').show().delay(3000).slideUp('fast');
 });

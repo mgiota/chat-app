@@ -9,7 +9,7 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
 
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
-    $(".alert.alert-info").show();
+    $(".comment-alert").show().delay(3000).fadeOut('slow');
     $('.comment-result').prepend(data.comment);
   },
 

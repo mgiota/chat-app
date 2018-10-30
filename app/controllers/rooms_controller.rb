@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
     @rooms = Room.all
     @users = User.all 
 
-    @comments = @room.comments.order("created_at DESC")
+    @comments = @room.comments.order("created_at ASC")
   end
 
   # GET /rooms/new

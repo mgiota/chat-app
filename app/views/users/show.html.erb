@@ -1,13 +1,13 @@
 <section class="container spacing-top">
 	<div class="row">
-		<div class="col-6">
+		<div class="col-md-6 col-lg-6">
 			<% if @user.profile_pic.attached? %>
 				<%= image_tag @user.profile_pic.variant(combine_options: {resize: '300x300^', gravity: 'center', extent: '300x300^'}), class: 'big-circle' %>
 			<% else %>
 				<%= image_tag('chat.jpg', class: 'big-circle') %>
 			<% end %>
 		</div>
-		<div class="col-6 user-info">
+		<div class="col-md-6 col-lg-6 user-info">
 			<h1>Hello <%= @user.first_name %></h1>
 			<h5>Thanks for joining Talk to Paul</h5>
 			<div class="signup-details">

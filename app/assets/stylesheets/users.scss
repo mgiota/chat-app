@@ -45,19 +45,18 @@
 }
 
 .big-circle {
-	height: 400px;
-  width: 400px;
+	height: 250px;
+  width: 250px;
   background-color: #bbb;
   border-radius: 50%;
-  display: inline-block;
-  float: left;
-  margin-right: 20px;
-  float: right;
+  display: block;
+  margin: auto;
   border: 1px solid #eee;
 }
 
 .user-info {
-		margin-top: 40px;
+	text-align: center;
+		margin-top: 20px;
 	}
 
 .user-info h5 {
@@ -81,6 +80,20 @@
 }
 
 @media(min-width: 768px) {
+
+	.big-circle {
+		height: 400px;
+	  width: 400px;
+	  background-color: #bbb;
+	  float: right;
+	  border: 1px solid #eee;
+	}
+
+	.user-info {
+		margin-top: 40px;
+		text-align: left;
+	}
+
 	.form-center {
 		width: 400px;
 		padding: 20px;

@@ -1,7 +1,10 @@
 <section class="container spacing-top">
 
-	<%= image_tag @user.profile_pic.variant(combine_options: {resize: '300x300^', gravity: 'center', extent: '300x300^'}), class: 'big-circle' %>
-
+	<% if @user.profile_pic.attached? %>
+		<%= image_tag @user.profile_pic.variant(combine_options: {resize: '300x300^', gravity: 'center', extent: '300x300^'}), class: 'big-circle' %>
+	<% else %>
+		<%= image_tag('chat.jpg', class: 'big-circle') %>
+	<% end %>
 	<h3>Hello <%= @user.first_name %></h3>
 	<p>
 	  <strong>First name:</strong>

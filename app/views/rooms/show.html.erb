@@ -15,7 +15,11 @@
 					<h5>Users</h5>
 					<% @users.each do |user| %>
 					<div class="user-details">
-						<%= image_tag user.profile_pic.variant(combine_options: {resize: '70x70^', gravity: 'center', extent: '70x70^'}), class: 'circle' %>
+						<% if user.profile_pic.attached? %>
+							<%= image_tag user.profile_pic.variant(combine_options: {resize: '70x70^', gravity: 'center', extent: '70x70^'}), class: 'circle' %>
+						<% else %>
+							<%= image_tag('chat.jpg', class: 'circle') %>
+						<% end %>
 		        <p class="user-name"><%= user.first_name %> <%= user.last_name %></p>
 	        </div>
 	        <% end %>

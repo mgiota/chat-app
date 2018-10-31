@@ -29,16 +29,12 @@ a {
 }
 
 .white-space {
-	height: 200px;
+	height: 100px;
 }
 
 @media(min-width: 992px) {
 	.spacing-top {
 		margin-top: 60px;
-	}
-
-	.white-space {
-		height: 100px;
 	}
 }
 

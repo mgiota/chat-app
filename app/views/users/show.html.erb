@@ -1,21 +1,24 @@
 <section class="container spacing-top">
-
-	<% if @user.profile_pic.attached? %>
-		<%= image_tag @user.profile_pic.variant(combine_options: {resize: '300x300^', gravity: 'center', extent: '300x300^'}), class: 'big-circle' %>
-	<% else %>
-		<%= image_tag('chat.jpg', class: 'big-circle') %>
-	<% end %>
-	<h3>Hello <%= @user.first_name %></h3>
-	<p>
-	  <strong>First name:</strong>
-	  <%= @user.first_name %>
-	</p>
-
-	<p>
-	  <strong>Last name:</strong>
-	  <%= @user.last_name %>
-	</p>
-
-	<%= link_to 'Edit', edit_user_path(@user) %> |
-	<%= link_to 'Back', users_path %>
+	<div class="row">
+		<div class="col-6">
+			<% if @user.profile_pic.attached? %>
+				<%= image_tag @user.profile_pic.variant(combine_options: {resize: '300x300^', gravity: 'center', extent: '300x300^'}), class: 'big-circle' %>
+			<% else %>
+				<%= image_tag('chat.jpg', class: 'big-circle') %>
+			<% end %>
+		</div>
+		<div class="col-6 user-info">
+			<h1>Hello <%= @user.first_name %></h1>
+			<h5>Thanks for joining Talk to Paul</h5>
+			<div class="signup-details">
+				<p><strong>First name:</strong> <%= @user.first_name %></p>
+				<p><strong>Last name:</strong> <%= @user.last_name %></p>
+				<p><strong>Emal:</strong> <%= @user.email %>
+			</div>
+			<div class="user-edit"></div>
+				<%= link_to 'Edit', edit_user_path(@user) %> |
+				<%= link_to 'Back', users_path %>
+			</div>
+		</div>
+	</div>
 </section>

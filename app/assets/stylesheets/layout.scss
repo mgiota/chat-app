@@ -28,9 +28,17 @@ a {
 	color: #fff;
 }
 
+.white-space {
+	height: 200px;
+}
+
 @media(min-width: 992px) {
 	.spacing-top {
 		margin-top: 60px;
+	}
+
+	.white-space {
+		height: 100px;
 	}
 }
 

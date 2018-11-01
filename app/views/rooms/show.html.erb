@@ -8,7 +8,20 @@
 
 				<div class="channel online">
 					<h5>Active now</h5>
-	        	<%= current_user.online? %>
+	        	<%= current_user.online %>
+
+	        	<ul id="users-list">
+						  <% @users.each do |user| %>
+						      <li>
+						        <%= user.name %>
+						        <% if user.online %>
+						          <%= image_tag "chat.jpg", id: "#{user_id}-status", class: "active" %>
+						        <% else %>
+						          <%= image_tag "chat.jpg", id: "#{user_id}-status", class: "inactive" %>
+						        <% end %>
+						      </li>
+						  <% end %>
+						</ul>
 				</div>
 
 				<div class="channel users">

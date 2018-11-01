@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :comments
   # belongs_to :room
 
+  def online?
+    return email
+  end
+
 
   def username
   	return first_name

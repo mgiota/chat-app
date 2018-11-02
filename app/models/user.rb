@@ -6,12 +6,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :comments
-  # belongs_to :room
+  
 
-  def online?
-    return email
+  after_update_commit {AppearanceBroadcastJob.perform_later self}
+
+  def is_online
+    self.update_attributes(online: true)
   end
 
+  def is_offline
+    self.update_attributes(online: false)
+  end
 
   def username
   	return first_name

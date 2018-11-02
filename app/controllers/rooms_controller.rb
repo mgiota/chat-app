@@ -14,7 +14,6 @@ class RoomsController < ApplicationController
     # @user = current_user
     @rooms = Room.all
     @users = User.all 
-
     @comments = @room.comments.order("created_at ASC")
   end
 

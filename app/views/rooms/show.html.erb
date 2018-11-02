@@ -3,12 +3,7 @@
 		<div class="col-lg-2 topic-column">
 
 				<div class="channel welcome">
-	        <p>Welcome back <%= current_user.first_name %>!</P>
-				</div>
-
-				<div class="channel online">
-					<h5>Active now</h5>
-	        	<%= current_user.online? %>
+	        <p>Welcome back <%= current_user.first_name %></p>
 				</div>
 
 				<div class="channel users">
@@ -20,7 +15,14 @@
 						<% else %>
 							<%= image_tag('chat.jpg', class: 'circle') %>
 						<% end %>
-		        <p class="user-name"><%= user.first_name %> <%= user.last_name %></p>
+		        <p class="user-name">
+		        	<%= user.first_name %> <%= user.last_name %>
+			        <% if user.online %>
+			          <%= image_tag "online.png", id: "#{user.id}-status", class: "active" %>
+			        <% else %>
+			          <%= image_tag "offline.png", id: "#{user.id}-status", class: "inactive" %>
+			        <% end %>
+		        </p>
 	        </div>
 	        <% end %>
 				</div>

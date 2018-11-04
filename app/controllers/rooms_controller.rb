@@ -1,7 +1,9 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-
+    before_action do
+      ActiveStorage::Current.host = request.base_url
+    end
   # GET /rooms
   # GET /rooms.json
   def index
@@ -15,6 +17,7 @@ class RoomsController < ApplicationController
     @rooms = Room.all
     @users = User.all 
     @comments = @room.comments.order("created_at ASC")
+      puts ActiveStorage::Current.host
   end
 
   # GET /rooms/new

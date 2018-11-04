@@ -8,6 +8,7 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
   },
 
   received: function(data) {
+    console.log(data)
     // Called when there's incoming data on the websocket for this channel
     $(".comment-alert").show().delay(3000).fadeOut('slow');
     $('.comment-result').append(data.comment);
@@ -21,5 +22,7 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
 });
 
 $(document).on('turbolinks:load', function() {
-  App.room.listen_to_comments();
+  setTimeout(function() {
+     App.room.listen_to_comments();
+  }, 500);
 });

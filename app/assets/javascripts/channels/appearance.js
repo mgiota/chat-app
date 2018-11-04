@@ -14,5 +14,5 @@ App.appearance = App.cable.subscriptions.create({
 });
 
 var userImgIdConstructor = function(user){
-  return "#" + user_id + "-status";
+  return "#" + user.id + "-status";
 }

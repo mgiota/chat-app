@@ -30,12 +30,16 @@ a {
 }
 
 .white-space {
-	height: 100px;
+	height: 80px;
 }
 
 @media(min-width: 992px) {
 	.spacing-top {
 		margin-top: 60px;
+	}
+
+	.white-space {
+		height: 30px;
 	}
 }
 

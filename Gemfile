@@ -38,6 +38,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'cancancan', '~> 1.10'
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

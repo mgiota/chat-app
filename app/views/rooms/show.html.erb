@@ -17,6 +17,11 @@
 						<% end %>
 		        <p class="user-name">
 		        	<%= user.first_name %> <%= user.last_name %>
+			        <% if user.online %>
+			          <%= image_tag "online.png", id: "#{user.id}-status", class: "active" %>
+			        <% else %>
+			          <%= image_tag "offline.png", id: "#{user.id}-status", class: "inactive" %>
+			        <% end %>
 		        </p>
 	        </div>
 	        <% end %>

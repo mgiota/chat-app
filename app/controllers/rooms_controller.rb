@@ -15,8 +15,9 @@ class RoomsController < ApplicationController
   def show
     # @user = current_user
     @rooms = Room.all
-    @users = User.all 
+    @users = User.all
     @comments = @room.comments.order("created_at ASC")
+    @memberships = @room.memberships
       puts ActiveStorage::Current.host
   end
 
@@ -34,15 +35,18 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @room.save
-        format.html { redirect_to @room, notice: 'Room was successfully created.' }
-        format.json { render :show, status: :created, location: @room }
+        @room.users << current_user
+        redirect_to room_memberships_path(@room)
+
+        # format.html { redirect_to @room, notice: 'Room was successfully created.' }
+        # format.json { render :show, status: :created, location: @room }
       else
         format.html { render :new }
         format.json { render json: @room.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /rooms/1

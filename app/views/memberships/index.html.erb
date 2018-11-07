@@ -4,18 +4,22 @@
 <h4>Current members</h4>
 <ul id="member-list">
   <% @memberships.each do |member| %>
-    <li><%= member.email %></li>
+    <%= render member %>
   <% end %>
 </ul>
 
 <h4>Add members</h4>
 <ul id="add-users">
-  <!-- <%= form_for([@room, @room.memberships.build], remote: true, method: "post") do |f| %> -->
+  <%= form_for([@room, @room.memberships.build], remote: true) do |f| %>
     <% @users.each do |user| %>
-        <li>
+      <li id="<%= "#{user.id}-add-member" %>">
           <%= user.email %>
-          <input type="checkbox" id="<%= "#{user.id}-add-member" %>"/>
+          <%= f.check_box :user_id %>
+          <!-- <input type="checkbox" id="<%= "#{user.id}-add-member" %>"/> -->
         </li>
-      <% end %>
-  <!-- <% end %> -->
+      <!-- <% end %> -->
+      <p>
+       <%= f.submit "Submit", class: 'btn btn-success' %>
+      </p>
+  <% end %>
 </ul>

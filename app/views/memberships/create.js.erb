@@ -1,0 +1,13 @@
+// console.log("<%= @room.users.first.email %>", 'lala')
+$('#<%= @user.id %>-add-member').remove();
+
+// $('#' + userData.id + "-add-member").parent().remove();
+console.log('!!!!')
+console.log("<%= @user.id %>")
+console.log("<%= @id %>")
+var memberAppendBuilder = function(email){
+   return "<li>" + email + "</li>";
+};
+
+// $('#member-list').append(memberAppendBuilder("<%= @user.email %>"));
+$('#member-list').append("<%= j render @user %>");

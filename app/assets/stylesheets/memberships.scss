@@ -1,0 +1,32 @@
+// Place all the styles related to the memberships controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.membership {
+  h2, h3 {
+    font-weight: normal;
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  a {
+    color: #4183C4;
+  }
+
+  .offset {
+    margin-top:20px;
+  }
+
+  .box {
+    position: relative;
+    background: #FFF;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    margin: 1rem 0;
+    padding: 1em;
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+    margin-right: 20px
+  }
+}

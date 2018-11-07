@@ -7,17 +7,20 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+    @rooms = current_user.rooms
+    @room = Room.new
   end
 
   # GET /rooms/1
   # GET /rooms/1.json
   def show
     # @user = current_user
-    @rooms = Room.all
-    @users = User.all 
+    @room = Room.find(params[:id])
+    redirect_with_flash unless member_of_group
     @comments = @room.comments.order("created_at ASC")
-      puts ActiveStorage::Current.host
+    @comment = Comment.new
+    @rooms = current_user.rooms
+    @users = @room.users - [current_user]
   end
 
   # GET /rooms/new
@@ -34,15 +37,18 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @room.save
-        format.html { redirect_to @room, notice: 'Room was successfully created.' }
-        format.json { render :show, status: :created, location: @room }
+        @room.users << current_user
+        redirect_to room_memberships_path(@room)
+
+        # format.html { redirect_to @room, notice: 'Room was successfully created.' }
+        # format.json { render :show, status: :created, location: @room }
       else
         format.html { render :new }
         format.json { render json: @room.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /rooms/1

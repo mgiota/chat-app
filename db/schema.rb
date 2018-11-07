@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2018_11_07_150407) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "memberships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_memberships_on_room_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

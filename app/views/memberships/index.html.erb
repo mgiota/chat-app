@@ -2,32 +2,33 @@
   <div class="row" style="text-align: center">
     <div class="col">
       <h2>Add members to <%=@room.topic %></h2>
-      <h3><%= link_to "go to #{@room.topic}", room_path(@room) %></h3>
     </div>
   </div>
   <div class="row offset">
-    <div class="col box">
-      <h4>Current members</h4>
+    <div class="col-12 box">
+      <h4><%=@room.topic %> members</h4>
+      <div class="room-link"> <%= link_to '<span><i class="fas fa-link"></i></span>'.html_safe, room_path(@room) %>
+      </div>
       <ul id="member-list">
         <% @memberships.each do |member| %>
           <%= render member %>
         <% end %>
       </ul>
     </div>
-    <div class="col box">
-      <h4>Members to add</h4>
+    <div class="col-12 box add-box">
+      <h4>Add users to your channel</h4>
       <ul id="add-users">
         <%= form_for([@room, @room.memberships.build], remote: true) do |f| %>
           <% @users.each do |user| %>
             <li id="<%= "#{user.id}-add-member" %>">
-              <%= user.email %>
+              <%= user.first_name %>
               <!-- <%= f.check_box :user_id %> -->
               <%= check_box_tag(:user_id, user.id) %>
 
             </li>
           <% end %>
           <p>
-           <%= f.submit "Submit", class: 'btn btn-success' %>
+           <%= f.submit "Submit", class: 'btn btn-success btn-spacing' %>
           </p>
         <% end %>
       </ul>

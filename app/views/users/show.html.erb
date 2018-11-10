@@ -4,7 +4,7 @@
 			<% if @user.profile_pic.attached? %>
 				<%= image_tag @user.profile_pic.variant(combine_options: {resize: '300x300^', gravity: 'center', extent: '300x300^'}), class: 'big-circle' %>
 			<% else %>
-				<%= image_tag('chat.jpg', class: 'big-circle') %>
+				<%= link_to image_tag('chat.jpg', class: 'big-circle'), edit_user_path(@user) %>
 			<% end %>
 		</div>
 		<div class="col-md-6 col-lg-6 user-info">

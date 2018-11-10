@@ -15,7 +15,7 @@
 						<% else %>
 							<%= image_tag('chat.jpg', class: 'circle') %>
 						<% end %>
-		        <p class="user-name">
+		        <p class="user-name truncate">
 		        	<%= user.first_name %> <%= user.last_name %>
 			        <% if user.online %>
 			          <%= image_tag "online.png", id: "#{user.id}-status", class: "active" %>
@@ -33,7 +33,7 @@
 				<div class="channel links">
 					<h5>All my channels</h5>
 					<% @rooms.each do |room| %>
-						<p><%= link_to room.topic, room %></p>
+						<p class="truncate"><%= link_to room.topic, room %></p>
 					<% end %>
 				</div>
 

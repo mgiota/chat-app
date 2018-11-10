@@ -7,7 +7,9 @@
 				</div>
 
 				<div class="channel users">
-					<h5>Users</h5>
+					<h5><%= @room.topic %>
+						<div>users</div>
+					</h5>
 					<% @users.each do |user| %>
 					<div class="user-details">
 						<% if user.profile_pic.attached? %>
@@ -25,10 +27,13 @@
 		        </p>
 	        </div>
 	        <% end %>
+
+					<%= link_to 'Invite users', room_memberships_path(@room) %>
+
 				</div>
 
 				<div class="channel links">
-					<h5>Channels</h5>
+					<h5>All my channels</h5>
 					<% @rooms.each do |room| %>
 						<p><%= link_to room.topic, room %></p>
 					<% end %>

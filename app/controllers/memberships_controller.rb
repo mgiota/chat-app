@@ -12,13 +12,22 @@ class MembershipsController < ApplicationController
     redirect_with_flash unless member_of_group
 
     # @user = User.find(params[:membership][:user_id])
-    @user = User.find(params[:user_id])
-    @membership = Membership.new(user_id: @user.id,
-                            room_id: @room.id)
+    # @user = User.find(params[:user_id])
+    @new_members = User.find(params[:membership][:user_id])
+    new_records = []
+    @user_ids = []
+    @new_members.each do |member|
+      new_records.push({
+        :user_id => member.id,
+        :room_id => @room.id
+      });
+      @user_ids.push(member.id);
+    end
+    @membership = Membership.create(new_records)
 
 
     respond_to do |format|
-      if @membership.save
+      if @membership
         #json_hash = {email: user.email, id: user.id}
         #render text: JSON.generate(json_hash)
         #render json: json_hash

@@ -23,7 +23,9 @@
             <li id="<%= "#{user.id}-add-member" %>">
               <%= user.first_name %>
               <!-- <%= f.check_box :user_id %> -->
-              <%= check_box_tag(:user_id, user.id) %>
+              <!-- <%= check_box_tag(:user_id, user.id) %> -->
+              <%= check_box("membership", "user_id", { :multiple => true }, user.id, nil)  %>
+
 
             </li>
           <% end %>
